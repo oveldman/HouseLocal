@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{964C8E95-E8DB-47BE-A95C-A219CCD02F84}"
+	ProjectSection(SolutionItems) = preProject
+		Deployement\kubernetes.yaml = Deployement\kubernetes.yaml
+		Deployement\build.sh = Deployement\build.sh
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Weather", "HouseApp.Backend.Weather\HouseApp.Backend.Weather.csproj", "{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8863668B-6EA3-4426-AAED-99F96A472832}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{CFFB5134-08EB-4EC5-8156-B90C14B461CC}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Links.md = ..\Documentation\Links.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
+	EndGlobalSection
+EndGlobal
