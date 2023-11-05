@@ -3,20 +3,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: houseapp-weather-deployment
+  name: houseapp-light-deployment
 spec:
   selector:
     matchLabels:
-      app: weather-api
+      app: light-api
   replicas: 1
   template:
     metadata:
       labels:
-        app: weather-api
+        app: light-api
     spec:
       containers:
-        - name: weather-api
-          image: madworld/houseapp/weather:latest
+        - name: light-api
+          image: madworld/houseapp/light:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -25,10 +25,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: houseapp-weather-loadbalancer
+  name: houseapp-light-loadbalancer
 spec:
   selector:
-    app: weather-api
+    app: light-api
   ports:
     - protocol: TCP
       port: 80
@@ -38,16 +38,16 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: houseapp-weather-ingress
+  name: houseapp-light-ingress
 spec:
   rules:
-    - host: weather.houseapp.com
+    - host: light.houseapp.com
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: houseapp-weather-loadbalancer
+                name: houseapp-light-loadbalancer
                 port:
                   number: 80

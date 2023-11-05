@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{964C8E95-E8DB-47BE-A95C-A219CCD02F84}"
 	ProjectSection(SolutionItems) = preProject
-		Deployement\build.sh = Deployement\build.sh
+		Deployement\build-and-deploy.sh = Deployement\build-and-deploy.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Weather", "HouseApp.Backend.Weather\HouseApp.Backend.Weather.csproj", "{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}"
@@ -22,7 +22,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{2EFC9FF6-A19C-4C72-9128-931031EC37D8}"
 	ProjectSection(SolutionItems) = preProject
 		Deployement\Kubernetes\Weather-Deployment.yaml = Deployement\Kubernetes\Weather-Deployment.yaml
+		Deployement\Kubernetes\Light-Deployment.yaml = Deployement\Kubernetes\Light-Deployment.yaml
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Light", "HouseApp.Backend.Light\HouseApp.Backend.Light.csproj", "{5546B562-C1BA-456B-824D-3B24D87368CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,9 +37,14 @@ Global
 		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5546B562-C1BA-456B-824D-3B24D87368CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5546B562-C1BA-456B-824D-3B24D87368CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5546B562-C1BA-456B-824D-3B24D87368CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5546B562-C1BA-456B-824D-3B24D87368CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{2EFC9FF6-A19C-4C72-9128-931031EC37D8} = {964C8E95-E8DB-47BE-A95C-A219CCD02F84}
+		{5546B562-C1BA-456B-824D-3B24D87368CB} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 	EndGlobalSection
 EndGlobal
