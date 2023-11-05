@@ -31,23 +31,38 @@ spec:
     app: weather-api
   ports:
     - protocol: TCP
-      port: 80
+      name: http
+      port: 8081
       targetPort: 80
+    - protocol: TCP
+      name: https
+      port: 443
+      targetPort: 443
   type: LoadBalancer
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: houseapp-weather-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   rules:
-    - host: weather.houseapp.com
+    - host: www.houseapp.local
       http:
         paths:
-          - path: /
+          - path: /weather/
             pathType: Prefix
             backend:
               service:
                 name: houseapp-weather-loadbalancer
                 port:
-                  number: 80
+                  number: 8081
+          - path: /weather/
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-weather-loadbalancer
+                port:
+                  number: 443

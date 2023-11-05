@@ -31,8 +31,13 @@ spec:
     app: light-api
   ports:
     - protocol: TCP
-      port: 80
+      name: http
+      port: 8080
       targetPort: 80
+    - protocol: TCP
+      name: https
+      port: 443
+      targetPort: 443
   type: LoadBalancer
 ---
 apiVersion: networking.k8s.io/v1
@@ -41,13 +46,20 @@ metadata:
   name: houseapp-light-ingress
 spec:
   rules:
-    - host: light.houseapp.com
+    - host: www.houseapp.com
       http:
         paths:
-          - path: /
+          - path: /light/
             pathType: Prefix
             backend:
               service:
                 name: houseapp-light-loadbalancer
                 port:
-                  number: 80
+                  number: 8080
+          - path: /light/
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-light-loadbalancer
+                port:
+                  number: 443
