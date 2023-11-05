@@ -2,7 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{964C8E95-E8DB-47BE-A95C-A219CCD02F84}"
 	ProjectSection(SolutionItems) = preProject
-		Deployement\kubernetes.yaml = Deployement\kubernetes.yaml
 		Deployement\build.sh = Deployement\build.sh
 	EndProjectSection
 EndProject
@@ -15,6 +14,14 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{CFFB5134-08EB-4EC5-8156-B90C14B461CC}"
 	ProjectSection(SolutionItems) = preProject
 		..\Documentation\Links.md = ..\Documentation\Links.md
+		..\Documentation\MiniKube.md = ..\Documentation\MiniKube.md
+		..\README.md = ..\README.md
+		..\Documentation\InstallGuide.md = ..\Documentation\InstallGuide.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{2EFC9FF6-A19C-4C72-9128-931031EC37D8}"
+	ProjectSection(SolutionItems) = preProject
+		Deployement\Kubernetes\Weather-Deployment.yaml = Deployement\Kubernetes\Weather-Deployment.yaml
 	EndProjectSection
 EndProject
 Global
@@ -30,5 +37,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
+		{2EFC9FF6-A19C-4C72-9128-931031EC37D8} = {964C8E95-E8DB-47BE-A95C-A219CCD02F84}
 	EndGlobalSection
 EndGlobal
