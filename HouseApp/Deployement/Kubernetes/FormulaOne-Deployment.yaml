@@ -3,20 +3,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: houseapp-light-deployment
+  name: houseapp-formulaone-deployment
 spec:
   selector:
     matchLabels:
-      app: light-api
+      app: formulaone-api
   replicas: 1
   template:
     metadata:
       labels:
-        app: light-api
+        app: formulaone-api
     spec:
       containers:
-        - name: light-api
-          image: madworld/houseapp/light:latest
+        - name: formulaone-api
+          image: madworld/houseapp/formulaone:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -24,13 +24,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: houseapp-light-loadbalancer
+  name: houseapp-formulaone-loadbalancer
 spec:
   selector:
-    app: light-api
+    app: formulaone-api
   ports:
     - protocol: TCP
       name: http
-      port: 8081
+      port: 8080
       targetPort: 80
   type: LoadBalancer
