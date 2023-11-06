@@ -9,5 +9,5 @@
 ## Edit your host file
 Add the following lines to your host file
 ```bash
-127.0.0.1   www.houseapp.local
+127.0.0.1   my.houseapp.local
 ```

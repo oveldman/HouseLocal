@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", 
 	ProjectSection(SolutionItems) = preProject
 		Deployement\Kubernetes\Weather-Deployment.yaml = Deployement\Kubernetes\Weather-Deployment.yaml
 		Deployement\Kubernetes\Light-Deployment.yaml = Deployement\Kubernetes\Light-Deployment.yaml
+		Deployement\Kubernetes\Ingress-Deployment.yaml = Deployement\Kubernetes\Ingress-Deployment.yaml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Light", "HouseApp.Backend.Light\HouseApp.Backend.Light.csproj", "{5546B562-C1BA-456B-824D-3B24D87368CB}"

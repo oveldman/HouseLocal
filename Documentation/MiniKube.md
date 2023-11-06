@@ -32,5 +32,16 @@ To retrieve the external IP and Port
 kubectl get svc
 ```
 
+## Install
+```bash
+minikube start
+```
+```bash
+minikube kubectl
+```
+```bash
+minikube addons enable ingress
+```
+
 ### References
 [Start with MiniKube](https://minikube.sigs.k8s.io/docs/start/)
