@@ -1,5 +1,6 @@
 #!/bin/bash
-sudo kubectl delete deployment --all
+touch Deployment/Kubernetes/images
+sudo microk8s kubectl delete deployment --all
 
 docker build -f HouseApp.Backend.FormulaOne/Dockerfile -t madworld/houseapp/formulaone .
 docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld-houseapp-formulaone.tar
@@ -21,6 +22,6 @@ docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld
 sudo microk8s.ctr -n k8s.io image import Deployment/Kubernetes/images/madworld-houseapp-ui.tar
 echo "UI image loaded"
 
-sudo kubectl -- apply -f Deployement/Kubernetes
+sudo microk8s kubectl -- apply -f Deployement/Kubernetes
 
 sudo rm -r Deployment/Kubernetes/images
