@@ -3,20 +3,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: houseapp-weather-deployment
+  name: houseapp-ui-deployment
 spec:
   selector:
     matchLabels:
-      app: weather-api
+      app: ui-app
   replicas: 1
   template:
     metadata:
       labels:
-        app: weather-api
+        app: ui-app
     spec:
       containers:
-        - name: weather-api
-          image: madworld/houseapp/weather:latest
+        - name: ui-api
+          image: madworld/houseapp/ui:latest
           imagePullPolicy: Never
           ports:
             - containerPort: 80
@@ -24,13 +24,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: houseapp-weather-loadbalancer
+  name: houseapp-ui-loadbalancer
 spec:
   selector:
-    app: weather-api
+    app: ui-app
   ports:
     - protocol: TCP
       name: http
-      port: 8083
+      port: 8082
       targetPort: 80
   type: LoadBalancer

@@ -4,7 +4,7 @@ metadata:
   name: houseapp-ingress
 spec:
   rules:
-    - host: my.houseapp.local
+    - host: api.myhouseapp.local
       http:
         paths:
           - path: /formulaone/
@@ -26,5 +26,15 @@ spec:
             backend:
               service:
                 name: houseapp-weather-loadbalancer
+                port:
+                  number: 80
+    - host: ui.myhouseapp.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-ui-loadbalancer
                 port:
                   number: 80
