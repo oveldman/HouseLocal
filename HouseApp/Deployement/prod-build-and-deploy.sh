@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir Deployment/Kubernetes/images
+mkdir -p Deployment/Kubernetes/images
 sudo microk8s kubectl delete deployment --all
 
 docker build -f HouseApp.Backend.FormulaOne/Dockerfile -t madworld/houseapp/formulaone .
