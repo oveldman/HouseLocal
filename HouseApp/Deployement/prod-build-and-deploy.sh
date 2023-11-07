@@ -24,4 +24,4 @@ echo "UI image loaded"
 
 sudo microk8s kubectl apply -f Deployement/Kubernetes
 
-sudo rm -r Deployement/Kubernetes/images
+sudo rm -r Deployment/Kubernetes/images
