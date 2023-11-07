@@ -2,7 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{964C8E95-E8DB-47BE-A95C-A219CCD02F84}"
 	ProjectSection(SolutionItems) = preProject
-		Deployement\build-and-deploy.sh = Deployement\build-and-deploy.sh
+		Deployement\local-build-and-deploy.sh = Deployement\local-build-and-deploy.sh
+		Deployement\prod-build-and-deploy.sh = Deployement\prod-build-and-deploy.sh
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Weather", "HouseApp.Backend.Weather\HouseApp.Backend.Weather.csproj", "{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}"
