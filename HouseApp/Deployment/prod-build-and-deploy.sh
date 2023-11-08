@@ -8,17 +8,17 @@ sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-for
 echo "FormulaOne image loaded"
 
 docker build -f HouseApp.Backend.Weather/Dockerfile -t madworld/houseapp/weather .
-docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld-houseapp-weather.tar
+docker save madworld/houseapp/weather > Deployment/Kubernetes/images/madworld-houseapp-weather.tar
 sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-weather.tar
 echo "Weather image loaded"
 
 docker build -f HouseApp.Backend.Light/Dockerfile -t madworld/houseapp/light .
-docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld-houseapp-light.tar
+docker save madworld/houseapp/light > Deployment/Kubernetes/images/madworld-houseapp-light.tar
 sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-light.tar
 echo "Light image loaded"
 
 docker build -f HouseApp.Frontend.UI/Dockerfile -t madworld/houseapp/ui .
-docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld-houseapp-ui.tar
+docker save madworld/houseapp/ui > Deployment/Kubernetes/images/madworld-houseapp-ui.tar
 sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-ui.tar
 echo "UI image loaded"
 
