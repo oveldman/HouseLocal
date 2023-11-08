@@ -17,4 +17,4 @@ docker build -f HouseApp.Frontend.UI/Dockerfile -t madworld/houseapp/ui .
 minikube image load --overwrite madworld/houseapp/ui
 echo "UI image loaded"
 
-minikube kubectl -- apply -f Deployement/Kubernetes
+minikube kubectl -- apply -f Deployment/Kubernetes

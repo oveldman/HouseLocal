@@ -22,6 +22,6 @@ docker save madworld/houseapp/ui > Deployment/Kubernetes/images/madworld-houseap
 sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-ui.tar
 echo "UI image loaded"
 
-sudo microk8s kubectl apply -f Deployement/Kubernetes
+sudo microk8s kubectl apply -f Deployment/Kubernetes
 
 sudo rm -r Deployment/Kubernetes/images
