@@ -13,4 +13,5 @@ build_and_load_image "HouseApp.Backend.Weather" "weather"
 build_and_load_image "HouseApp.Backend.Light" "light"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
 
+minikube kubectl -- apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Local.yaml
 minikube kubectl -- apply -f Deployment/Kubernetes

@@ -1,0 +1,40 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: houseapp-ingress
+spec:
+  rules:
+    - host: api.myhouseapp.server
+      http:
+        paths:
+          - path: /formulaone/
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-formulaone-loadbalancer
+                port:
+                  number: 80
+          - path: /light/
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-light-loadbalancer
+                port:
+                  number: 80
+          - path: /weather/
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-weather-loadbalancer
+                port:
+                  number: 80
+    - host: ui.myhouseapp.server
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: houseapp-ui-loadbalancer
+                port:
+                  number: 80

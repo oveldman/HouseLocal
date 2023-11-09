@@ -14,7 +14,7 @@ build_and_load_image "HouseApp.Backend.Weather" "weather"
 build_and_load_image "HouseApp.Backend.Light" "light"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
 
+sudo microk8s kubectl apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Prod.yaml
 sudo microk8s kubectl apply -f Deployment/Kubernetes
 
-sudo microk8s kubectl -- apply -f Deployment/Kubernetes/Config/prod-config.yaml
 sudo rm -r Deployment/Kubernetes/images
