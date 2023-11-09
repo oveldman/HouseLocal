@@ -36,6 +36,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.FormulaOne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Frontend.UI", "HouseApp.Frontend.UI\HouseApp.Frontend.UI.csproj", "{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Config", "Config", "{0BEB99BF-7537-4283-825E-4C8D5608123F}"
+	ProjectSection(SolutionItems) = preProject
+		Deployment\Kubernetes\Config\local-config.yaml = Deployment\Kubernetes\Config\local-config.yaml
+		Deployment\Kubernetes\Config\prod-config.yaml = Deployment\Kubernetes\Config\prod-config.yaml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,5 +71,6 @@ Global
 		{5546B562-C1BA-456B-824D-3B24D87368CB} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
+		{0BEB99BF-7537-4283-825E-4C8D5608123F} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
 	EndGlobalSection
 EndGlobal

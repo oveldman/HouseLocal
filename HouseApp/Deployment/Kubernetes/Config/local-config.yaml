@@ -1,0 +1,4 @@
+# serverHost is the host name for the backend
+API_HOSTNAME: "api.myhouseapp.local"
+# serverHost is the host name for the frontend
+UI_HOSTNAME: "ui.myhouseapp.local"

@@ -1,20 +1,16 @@
 #!/bin/bash
+
+build_and_load_image () {
+   sudo docker build -f $1/Dockerfile -t madworld/houseapp/$2 .
+   sudo minikube image load --overwrite madworld/houseapp/$2
+   echo "$2 image loaded"
+}
+
 kubectl delete deployment --all
 
-docker build -f HouseApp.Backend.FormulaOne/Dockerfile -t madworld/houseapp/formulaone .
-minikube image load --overwrite madworld/houseapp/formulaone
-echo "FormulaOne image loaded"
-
-docker build -f HouseApp.Backend.Weather/Dockerfile -t madworld/houseapp/weather .
-minikube image load --overwrite madworld/houseapp/weather 
-echo "Weather image loaded"
-
-docker build -f HouseApp.Backend.Light/Dockerfile -t madworld/houseapp/light .
-minikube image load --overwrite madworld/houseapp/light
-echo "Light image loaded"
-
-docker build -f HouseApp.Frontend.UI/Dockerfile -t madworld/houseapp/ui .
-minikube image load --overwrite madworld/houseapp/ui
-echo "UI image loaded"
+build_and_load_image "HouseApp.Backend.FormulaOne" "formulaone"
+build_and_load_image "HouseApp.Backend.Weather" "weather"
+build_and_load_image "HouseApp.Backend.Light" "light"
+build_and_load_image "HouseApp.Frontend.UI" "ui"
 
 minikube kubectl -- apply -f Deployment/Kubernetes

@@ -1,27 +1,20 @@
 #!/bin/bash
+build_and_load_image () {
+  docker build -f $1/Dockerfile -t madworld/houseapp/$2 .
+  docker save madworld/houseapp/$2 > Deployment/Kubernetes/images/madworld-houseapp-$2.tar
+  sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-$2.tar
+  echo "$2 image loaded"
+}
+
 mkdir -p Deployment/Kubernetes/images
 sudo microk8s kubectl delete deployment --all
 
-docker build -f HouseApp.Backend.FormulaOne/Dockerfile -t madworld/houseapp/formulaone .
-docker save madworld/houseapp/formulaone > Deployment/Kubernetes/images/madworld-houseapp-formulaone.tar
-sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-formulaone.tar
-echo "FormulaOne image loaded"
-
-docker build -f HouseApp.Backend.Weather/Dockerfile -t madworld/houseapp/weather .
-docker save madworld/houseapp/weather > Deployment/Kubernetes/images/madworld-houseapp-weather.tar
-sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-weather.tar
-echo "Weather image loaded"
-
-docker build -f HouseApp.Backend.Light/Dockerfile -t madworld/houseapp/light .
-docker save madworld/houseapp/light > Deployment/Kubernetes/images/madworld-houseapp-light.tar
-sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-light.tar
-echo "Light image loaded"
-
-docker build -f HouseApp.Frontend.UI/Dockerfile -t madworld/houseapp/ui .
-docker save madworld/houseapp/ui > Deployment/Kubernetes/images/madworld-houseapp-ui.tar
-sudo microk8s images import < Deployment/Kubernetes/images/madworld-houseapp-ui.tar
-echo "UI image loaded"
+build_and_load_image "HouseApp.Backend.FormulaOne" "formulaone"
+build_and_load_image "HouseApp.Backend.Weather" "weather"
+build_and_load_image "HouseApp.Backend.Light" "light"
+build_and_load_image "HouseApp.Frontend.UI" "ui"
 
 sudo microk8s kubectl apply -f Deployment/Kubernetes
 
+sudo microk8s kubectl -- apply -f Deployment/Kubernetes/Config/prod-config.yaml
 sudo rm -r Deployment/Kubernetes/images
