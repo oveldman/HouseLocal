@@ -1,4 +1,6 @@
 #!/bin/bash
+#This removes the error of nginx image not found while building the image
+sudo docker pull nginx
 
 build_and_load_image () {
    sudo docker build -f $1/Dockerfile -t madworld/houseapp/$2 .
@@ -14,4 +16,5 @@ build_and_load_image "HouseApp.Backend.Light" "light"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
 
 minikube kubectl -- apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Local.yaml
-minikube kubectl -- apply -f Deployment/Kubernetes
+minikube kubectl -- apply -f Deployment/Kubernetes/HouseApps
+minikube kubectl -- apply -f Deployment/Kubernetes/External

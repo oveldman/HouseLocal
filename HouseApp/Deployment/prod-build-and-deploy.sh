@@ -15,6 +15,7 @@ build_and_load_image "HouseApp.Backend.Light" "light"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
 
 sudo microk8s kubectl apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Prod.yaml
-sudo microk8s kubectl apply -f Deployment/Kubernetes
+sudo microk8s kubectl apply -f Deployment/Kubernetes/HouseApps
+sudo microk8s kubectl apply -f Deployment/Kubernetes/External
 
 sudo rm -r Deployment/Kubernetes/images
