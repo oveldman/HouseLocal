@@ -5,7 +5,7 @@ metadata:
   labels:
     app: postgres
 data:
-  POSTGRES_DB: "postgresdb"
+  POSTGRES_DB: "defaultdb"
   POSTGRES_USER: "admin"
   # This password is not deployed yet in production
   POSTGRES_PASSWORD: "psltest"
@@ -65,9 +65,9 @@ spec:
                 name: postgres-config
           volumeMounts:
             - mountPath: "/home/oveldman/Docker_Storage/Postgres"
-              name: postgredb
+              name: postgresdb
       volumes:
-        - name: postgredb
+        - name: postgresdb
           persistentVolumeClaim:
             claimName: postgres-pv-claim
 ---
