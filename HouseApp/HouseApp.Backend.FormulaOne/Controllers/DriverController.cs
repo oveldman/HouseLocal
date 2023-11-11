@@ -15,6 +15,15 @@ public class DriverController : ControllerBase
         _context = context;
     }
     
+    [HttpPost(Name = "Driver")]
+    public ActionResult Add(Driver driver)
+    {
+        _context.Drivers.Add(driver);
+        _context.SaveChanges();
+        
+        return Ok();
+    }
+    
     [HttpGet(Name = "Driver")]
     public List<Driver> Get()
     {
