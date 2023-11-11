@@ -23,6 +23,7 @@ spec:
   storageClassName: manual
   capacity:
     storage: 5Gi
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
   hostPath:
