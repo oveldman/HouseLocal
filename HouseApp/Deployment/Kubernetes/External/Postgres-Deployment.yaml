@@ -69,7 +69,7 @@ spec:
             - configMapRef:
                 name: postgres-config
           volumeMounts:
-            - mountPath: "/home/oveldman/Docker_Storage/Postgres"
+            - mountPath: "/var/lib/postgresql/data"
               name: postgresdb
       volumes:
         - name: postgresdb
