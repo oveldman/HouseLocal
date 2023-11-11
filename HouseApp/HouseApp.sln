@@ -34,6 +34,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment"
 	ProjectSection(SolutionItems) = preProject
 		Deployment\Kubernetes\Environment\Ingress-Deployment-Local.yaml = Deployment\Kubernetes\Environment\Ingress-Deployment-Local.yaml
 		Deployment\Kubernetes\Environment\Ingress-Deployment-Prod.yaml = Deployment\Kubernetes\Environment\Ingress-Deployment-Prod.yaml
+		Deployment\Kubernetes\Environment\Config.yaml = Deployment\Kubernetes\Environment\Config.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HouseApps", "HouseApps", "{E41E632D-1012-4A7C-979B-EF7810588EAF}"

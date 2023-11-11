@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: houseapp-ingress
+  namespace: houseapp
 spec:
   rules:
     - host: api.myhouseapp.local

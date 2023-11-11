@@ -41,6 +41,7 @@ minikube kubectl
 ```
 ```bash
 minikube addons enable ingress
+minikube addons enable metrics-server
 ```
 
 ### References
