@@ -37,4 +37,4 @@ jobs:
           sh .github/vpn/vpn-check.sh
       - name: kill vpn
         if: always()
-        run: sudo killall openvpn
+        run: sudo killall openvpn 
