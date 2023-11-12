@@ -17,7 +17,7 @@ jobs:
         env:
           VPN_IP_ADDRESS: ${{ secrets.IP_ADDRESS }}
         run: |
-          sed -i -- 's@{{IP_ADDRESS}}@'"$VPN_IP_ADDRESS"'@' GithubActions.ovpn
+          sed -i -- 's@{{IP_ADDRESS}}@'"$VPN_IP_ADDRESS"'@' .github/vpn/GithubActions.ovpn
         shell: bash
       - name: Connect VPN
         uses: golfzaptw/action-connect-ovpn@master
