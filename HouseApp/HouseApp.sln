@@ -50,12 +50,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B4
 		Deployment\Kubernetes\External\Postgres-Deployment.yaml = Deployment\Kubernetes\External\Postgres-Deployment.yaml
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{E41425D8-4870-46B5-B953-F2D6671B6920}"
-	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\Deploy-Kubernetes.yaml = ..\.github\workflows\Deploy-Kubernetes.yaml
-		..\.github\vpn\vpn-check.sh = ..\.github\vpn\vpn-check.sh
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +82,5 @@ Global
 		{441105C6-3279-4E97-9128-8C407DBC0999} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
 		{E41E632D-1012-4A7C-979B-EF7810588EAF} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
 		{B41A6AE2-786F-4F86-80B0-BD42871D7FC6} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
-		{E41425D8-4870-46B5-B953-F2D6671B6920} = {964C8E95-E8DB-47BE-A95C-A219CCD02F84}
 	EndGlobalSection
 EndGlobal
