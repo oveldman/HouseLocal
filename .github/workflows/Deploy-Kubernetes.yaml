@@ -33,7 +33,7 @@ jobs:
           USER_KEY: ${{ secrets.USER_KEY }}
       - name: Check Connect VPN
         run: |
-          echo ${{ steps.connect_vpn.outputs.STATUS }} |
+          echo ${{ steps.connect_vpn.outputs.STATUS }}
           openvpn --status
       - name: kill vpn
         if: always()
