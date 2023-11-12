@@ -53,6 +53,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Github", "Github", "{E41425D8-4870-46B5-B953-F2D6671B6920}"
 	ProjectSection(SolutionItems) = preProject
 		..\.github\workflows\Deploy-Kubernetes.yaml = ..\.github\workflows\Deploy-Kubernetes.yaml
+		..\.github\vpn\vpn-check.sh = ..\.github\vpn\vpn-check.sh
 	EndProjectSection
 EndProject
 Global
