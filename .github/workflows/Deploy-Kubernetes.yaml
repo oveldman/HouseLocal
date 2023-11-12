@@ -20,7 +20,7 @@ jobs:
           sed -i -- 's@{{IP_ADDRESS}}@'"$VPN_IP_ADDRESS"'@' .github/vpn/GithubActions.ovpn
         shell: bash
       - name: Connect VPN
-        uses: golfzaptw/action-connect-ovpn@master
+        uses: JosiahSiegel/action-connect-ovpn@v2.0.2
         id: connect_vpn
         with:
           PING_URL: '127.0.0.1'
