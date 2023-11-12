@@ -1,0 +1,38 @@
+name: Deploy-Kubernetes
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  connect-open-vpn:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install Open VPN
+        run: sudo apt-get install openvpn
+      - name: Update ovpn file with IP Address
+        env:
+          VPN_IP_ADDRESS: ${{ secrets.IP_ADDRESS }}
+        run: |
+          sed -i -- 's@{{IP_ADDRESS}}@'"$VPN_IP_ADDRESS"'@' GithubActions.ovpn
+        shell: bash
+      - name: Connect VPN
+        uses: golfzaptw/action-connect-ovpn@master
+        id: connect_vpn
+        with:
+          PING_URL: '127.0.0.1'
+          FILE_OVPN: '.github/vpn/config.ovpn'
+          SECRET: ${{ secrets.SECRET_USERNAME_PASSWORD }}
+          TLS_KEY: ${{ secrets.TLS_KEY }}
+        env:
+          CA_CRT: ${{ secrets.CA_CRT}}
+          USER_CRT: ${{ secrets.USER_CRT }}
+          USER_KEY: ${{ secrets.USER_KEY }}
+      - name: Check Connect VPN
+        run: echo ${{ steps.connect_vpn.outputs.STATUS }}
+      - name: kill vpn
+        if: always()
+        run: sudo killall openvpn
