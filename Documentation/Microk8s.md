@@ -4,6 +4,11 @@ Start Dashboard
 sudo microk8s dashboard-proxy --address 0.0.0.0
 ```
 
+Enable addons
+```bash
+sudo microk8s enable registry dashboard ingress metrics-server
+```
+
 ### Edit config
 Edit the following path to change the binding path of the pods:\
 var/snap/microk8s/current/args/kube-proxy
