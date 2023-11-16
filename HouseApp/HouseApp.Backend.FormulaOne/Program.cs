@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FormulaOneContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("FormulaOneContext")));
 
+builder.AddBackgroundJobs();
+
 var app = builder.Build();
 
 app.UsePathBase(new PathString("/FormulaOne"));
