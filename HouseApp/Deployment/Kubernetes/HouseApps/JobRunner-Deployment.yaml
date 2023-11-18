@@ -1,0 +1,38 @@
+# https://kubernetes.io/docs/concepts/overview/working-with-objects/
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: houseapp-jobrunner-deployment
+  namespace: houseapp
+spec:
+  selector:
+    matchLabels:
+      app: houseapp-jobrunner
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: houseapp-jobrunner
+    spec:
+      containers:
+        - name: houseapp-jobrunner
+          image: madworld/houseapp/jobrunner:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: houseapp-jobrunner-loadbalancer
+  namespace: houseapp
+spec:
+  selector:
+    app: houseapp-jobrunner
+  ports:
+    - protocol: TCP
+      name: http
+      port: 8081
+      targetPort: 80
+  type: LoadBalancer

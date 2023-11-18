@@ -6,8 +6,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", 
 		Deployment\prod-build-and-deploy.sh = Deployment\prod-build-and-deploy.sh
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Weather", "HouseApp.Backend.Weather\HouseApp.Backend.Weather.csproj", "{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{8863668B-6EA3-4426-AAED-99F96A472832}"
@@ -24,10 +22,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kubernetes", "Kubernetes", "{2EFC9FF6-A19C-4C72-9128-931031EC37D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.Light", "HouseApp.Backend.Light\HouseApp.Backend.Light.csproj", "{5546B562-C1BA-456B-824D-3B24D87368CB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.FormulaOne", "HouseApp.Backend.FormulaOne\HouseApp.Backend.FormulaOne.csproj", "{2D5A6EC1-6001-4499-BAD5-A9B524A175B4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Frontend.UI", "HouseApp.Frontend.UI\HouseApp.Frontend.UI.csproj", "{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment", "{441105C6-3279-4E97-9128-8C407DBC0999}"
@@ -39,10 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Environment", "Environment"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HouseApps", "HouseApps", "{E41E632D-1012-4A7C-979B-EF7810588EAF}"
 	ProjectSection(SolutionItems) = preProject
-		Deployment\Kubernetes\HouseApps\FormulaOne-Deployment.yaml = Deployment\Kubernetes\HouseApps\FormulaOne-Deployment.yaml
-		Deployment\Kubernetes\HouseApps\Light-Deployment.yaml = Deployment\Kubernetes\HouseApps\Light-Deployment.yaml
 		Deployment\Kubernetes\HouseApps\UI-Deployment.yaml = Deployment\Kubernetes\HouseApps\UI-Deployment.yaml
-		Deployment\Kubernetes\HouseApps\Weather-Deployment.yaml = Deployment\Kubernetes\HouseApps\Weather-Deployment.yaml
+		Deployment\Kubernetes\HouseApps\Api-Deployment.yaml = Deployment\Kubernetes\HouseApps\Api-Deployment.yaml
+		Deployment\Kubernetes\HouseApps\JobRunner-Deployment.yaml = Deployment\Kubernetes\HouseApps\JobRunner-Deployment.yaml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B41A6AE2-786F-4F86-80B0-BD42871D7FC6}"
@@ -50,37 +43,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{B4
 		Deployment\Kubernetes\External\Postgres-Deployment.yaml = Deployment\Kubernetes\External\Postgres-Deployment.yaml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.API", "HouseApp.Backend.API\HouseApp.Backend.API.csproj", "{801D4026-1AD2-4DFC-814A-92D51B5AE079}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseApp.Backend.JobRunner", "HouseApp.Backend.JobRunner\HouseApp.Backend.JobRunner.csproj", "{7159593C-1C7E-45AE-ADAD-3CDD9201291D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5546B562-C1BA-456B-824D-3B24D87368CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5546B562-C1BA-456B-824D-3B24D87368CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5546B562-C1BA-456B-824D-3B24D87368CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5546B562-C1BA-456B-824D-3B24D87368CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{801D4026-1AD2-4DFC-814A-92D51B5AE079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{801D4026-1AD2-4DFC-814A-92D51B5AE079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{801D4026-1AD2-4DFC-814A-92D51B5AE079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{801D4026-1AD2-4DFC-814A-92D51B5AE079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7159593C-1C7E-45AE-ADAD-3CDD9201291D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7159593C-1C7E-45AE-ADAD-3CDD9201291D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7159593C-1C7E-45AE-ADAD-3CDD9201291D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7159593C-1C7E-45AE-ADAD-3CDD9201291D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{2B2D611B-5772-4AED-8C9E-7F1637DA9B25} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{2EFC9FF6-A19C-4C72-9128-931031EC37D8} = {964C8E95-E8DB-47BE-A95C-A219CCD02F84}
-		{5546B562-C1BA-456B-824D-3B24D87368CB} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
-		{2D5A6EC1-6001-4499-BAD5-A9B524A175B4} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{AB82131F-5612-4EE5-92EE-AFBFB5A8583B} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 		{441105C6-3279-4E97-9128-8C407DBC0999} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
 		{E41E632D-1012-4A7C-979B-EF7810588EAF} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
 		{B41A6AE2-786F-4F86-80B0-BD42871D7FC6} = {2EFC9FF6-A19C-4C72-9128-931031EC37D8}
+		{801D4026-1AD2-4DFC-814A-92D51B5AE079} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
+		{7159593C-1C7E-45AE-ADAD-3CDD9201291D} = {74F1DB61-5EDB-4E4F-AD46-42AFD29DE4C5}
 	EndGlobalSection
 EndGlobal

@@ -13,10 +13,11 @@ mkdir -p Deployment/Kubernetes/images
 sudo microk8s kubectl delete deployment,pods --all -n houseapp
 sudo microk8s kubectl delete deployment,pods --all -n default
 
-build_and_load_image "HouseApp.Backend.FormulaOne" "formulaone"
-build_and_load_image "HouseApp.Backend.Weather" "weather"
-build_and_load_image "HouseApp.Backend.Light" "light"
+build_and_load_image "HouseApp.Backend.API" "api"
+build_and_load_image "HouseApp.Backend.JobRunner" "jobrunner"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
+
+sudo docker image prune -f
 
 sudo microk8s kubectl apply -f Deployment/Kubernetes/Environment/Config.yaml
 sudo microk8s kubectl apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Prod.yaml

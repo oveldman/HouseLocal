@@ -12,10 +12,11 @@ sudo docker pull nginx
 sudo kubectl delete deployment,pods --all -n houseapp
 sudo kubectl delete deployment,pods --all -n default
 
-build_and_load_image "HouseApp.Backend.FormulaOne" "formulaone"
-build_and_load_image "HouseApp.Backend.Weather" "weather"
-build_and_load_image "HouseApp.Backend.Light" "light"
+build_and_load_image "HouseApp.Backend.API" "api"
+build_and_load_image "HouseApp.Backend.JobRunner" "jobrunner"
 build_and_load_image "HouseApp.Frontend.UI" "ui"
+
+sudo docker image prune -f
 
 minikube kubectl -- apply -f Deployment/Kubernetes/Environment/Config.yaml
 minikube kubectl -- apply -f Deployment/Kubernetes/Environment/Ingress-Deployment-Local.yaml

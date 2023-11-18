@@ -8,25 +8,21 @@ spec:
     - host: api.myhouseapp.local
       http:
         paths:
-          - path: /formulaone/
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: houseapp-formulaone-loadbalancer
+                name: houseapp-api-loadbalancer
                 port:
                   number: 80
-          - path: /light/
+    - host: jobrunner.myhouseapp.local
+      http:
+        paths:
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: houseapp-light-loadbalancer
-                port:
-                  number: 80
-          - path: /weather/
-            pathType: Prefix
-            backend:
-              service:
-                name: houseapp-weather-loadbalancer
+                name: houseapp-jobrunner-loadbalancer
                 port:
                   number: 80
     - host: ui.myhouseapp.local
