@@ -7,7 +7,7 @@ public class Forecast
     public DateTime Date { get; private set; }
     
     public Guid LocationId { get; private set; }
-    public Location Location { get; private set; }
+    public virtual Location Location { get; private set; }
 
     public Forecast(int celsiusTemperature, DateTime date, Location location)
     {

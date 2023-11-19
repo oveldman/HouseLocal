@@ -7,7 +7,7 @@ public class Location
     public Guid Id { get; private set; }
     public string Name { get; private set; }
     
-    public virtual List<Forecast> Forecasts { get; private set; }
+    public virtual ICollection<Forecast> Forecasts { get; private set; }
     
     public Location(string name)
     {

@@ -13,8 +13,10 @@ public class ForecastEntityTypeConfiguration : IEntityTypeConfiguration<Forecast
         builder.Property(x => x.Date)
             .IsRequired();
 
-        builder.HasOne<Location>()
-            .WithMany()
+        builder.HasOne<Location>(x => x.Location)
+            .WithMany(x => x.Forecasts)
             .HasForeignKey(x => x.LocationId);
+
+        builder.Navigation(x => x.Location).AutoInclude();
     }
 }

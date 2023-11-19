@@ -13,7 +13,5 @@ public class LocationEntityTypeConfiguration  : IEntityTypeConfiguration<Locatio
         builder.Property(x => x.Name)
             .IsRequired()
             .HasMaxLength(Location.MaxLength);
-
-        builder.HasMany<Forecast>().WithOne();
     }
 }

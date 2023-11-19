@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace HouseApp.Backend.API.Extensions;
+namespace HouseApp.Backend.Infrastructure.Database.Extensions;
 
 public static class IApplicationBuilderExtensions
 {
