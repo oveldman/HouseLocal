@@ -1,3 +1,4 @@
+using HouseApp.Backend.Application.DependencyInjection;
 using HouseApp.Backend.Infrastructure.Database.Extensions;
 using HouseApp.Backend.Infrastructure.Weathers;
 using Microsoft.EntityFrameworkCore;
@@ -11,10 +12,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.AddApplication();
+builder.AddDatabase();
+
 builder.Services.AddDbContext<WeatherDbContext>(options =>
     options.UseNpgsql(
         builder.Configuration.GetConnectionString(nameof(WeatherDbContext)),
-        b => b.MigrationsAssembly("HouseApp.Backend.API")));
+        b => b.MigrationsAssembly("HouseApp.Backend.Infrastructure")));
 
 var app = builder.Build();
 

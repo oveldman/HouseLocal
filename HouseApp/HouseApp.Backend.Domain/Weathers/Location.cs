@@ -11,6 +11,16 @@ public class Location
     
     public Location(string name)
     {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException("Value cannot be null or whitespace.", nameof(name));
+        }
+        
+        if (name.Length > MaxLength)
+        {
+            throw new ArgumentException($"Value cannot be longer than {MaxLength} characters.", nameof(name));
+        }
+        
         Id = Guid.NewGuid();
         Name = name;
         Forecasts = new List<Forecast>();

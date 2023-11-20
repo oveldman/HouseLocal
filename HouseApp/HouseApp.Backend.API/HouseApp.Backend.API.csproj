@@ -26,6 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\HouseApp.Backend.Application\HouseApp.Backend.Application.csproj" />
       <ProjectReference Include="..\HouseApp.Backend.Infrastructure\HouseApp.Backend.Infrastructure.csproj" />
     </ItemGroup>
 

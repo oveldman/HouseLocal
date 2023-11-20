@@ -14,3 +14,13 @@ dotnet ef migrations add InitialCreate --context WeatherDbContext -o ../HouseApp
 ```bash
 dotnet ef migrations remove 
 ```
+
+## Local development
+Create a postgres database in docker
+### Create Database
+```bash
+docker run --name dev-houselocal -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+```
+
+## References
+[Postgres Docker](https://hub.docker.com/_/postgres)
